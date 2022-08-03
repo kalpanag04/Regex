@@ -7,7 +7,7 @@ namespace RegexPatternMatching
         public static void Main(string[] args)
         {
             Patterns patterns = new Patterns();
-            if (patterns.validateString("91 9999999999"))
+            if (patterns.validateString("HBzhxbs90"))
             {
                 Console.WriteLine("Valid");
             }
