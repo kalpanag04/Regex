@@ -7,7 +7,7 @@ namespace RegexPatternMatching
         public static void Main(string[] args)
         {
             Patterns patterns = new Patterns();
-            if (patterns.validateString("Kalpana Gonal"))
+            if (patterns.validateString("abc.xyl@bl.co.in"))
             {
                 Console.WriteLine("Valid");
             }
