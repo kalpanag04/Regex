@@ -9,16 +9,85 @@ namespace RegexPatternMatching
 {
     class Patterns
     {
-        public static string RegexRules = "^[a-zA-Z0-9]{8,}$";
-        //public static string Regex_Pincode = "^[a-zA-Z0-9]+([.#_$+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
-        //public static string regex = "^[A-Za-z0-9]+([.#_+][A-Za-z0-9]+)*[@][A-Za-z0-9]+[.][a-z]{2,3}([.][a-z]{2})?$";
-        //public static string regex = "^[A-Za-z0-9]+([._#%+][A-Za-z0-9]+)?[@][A-Za-z]+[.][A-Za-z]{2,3}([.][a-zA-Z]{2})?$";
-        //[a-zA-Z0-9]{3,}([.][a-zA-Z0-9])*[@][a-zA-Z]{2,}([.][a-zA-Z0-9])*[.][a-zA-Z]{2,2}
-        public bool validateString(string sample)
+        public void CheckFirstName(string firstname)
         {
-            return Regex.IsMatch(sample, RegexRules);
+            string validateFirstName = "^[A-Z][a-z]{3,}$";
+            try
+            {
+                if (Regex.IsMatch(firstname, validateFirstName))
+                    Console.WriteLine("First Name saved succesfull");
+                else
+                    Console.WriteLine("Invalid name!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
+        public void CheckLastName(string lastname)
+        {
+            string validateFirstName = "^[A-Z][a-z]{3,}$";
+            try
+            {
+                if (Regex.IsMatch(lastname, validateFirstName))
+                    Console.WriteLine("First Name saved succesfull");
+                else
+                    Console.WriteLine("Invalid name!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void CheckEmail(string email)
+        {
+            string validateEmail = "^[a-zA-Z0-9]+([#$%^&*.+][a-zA-Z0-9]+)*[@][a-zA-Z0-9]{2,}[.][a-zA-Z]{2,3}([.][a-zA-Z0-9]{2})?$";
+            try
+            {
+                if (Regex.IsMatch(email, validateEmail))
+                    Console.WriteLine(" email validate succesfull");
+                else
+                    Console.WriteLine("Invalid email!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void CheckMobileNo(string mobile)
+        {
+            string validateMobile = "^[0-9]{1,4}[ ][0-9]{10,12}$";
+            try
+            {
+                if (Regex.IsMatch(mobile, validateMobile))
+                    Console.WriteLine(" mobile no validate succesfull");
+                else
+                    Console.WriteLine("Invalid mobile no.!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void CheckPassword(string password)
+        {
+            string validatepassword = "^[A-Za-z0-9]{8,}$";
+            try
+            {
+                if (Regex.IsMatch(password, validatepassword))
+                    Console.WriteLine("password validate succesfull");
+                else
+                    Console.WriteLine("Invalid password!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 
 }
