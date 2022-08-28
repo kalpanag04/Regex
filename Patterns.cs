@@ -9,13 +9,36 @@ namespace RegexPatternMatching
 {
     class Patterns
     {
-        public static string RegexRules = "^[A-Z][a-z]{2,}[ ][A-Z][a-z]{2,}$";
-        //public static string Regex_Pincode = "^[a-zA-Z0-9]+([.#_$+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
-        //public static string regex = "^[A-Za-z0-9]+([.#_+][A-Za-z0-9]+)*[@][A-Za-z0-9]+[.][a-z]{2,3}([.][a-z]{2})?$";
-        //public static string regex = "^[A-Za-z0-9]+([._#%+][A-Za-z0-9]+)?[@][A-Za-z]+[.][A-Za-z]{2,3}([.][a-zA-Z]{2})?$";
-        public bool validateString(string sample)
+        public void CheckFirstName(string firstname)
         {
-            return Regex.IsMatch(sample, RegexRules);
+            string validateFirstName = "^[A-Z][a-z]{3,}$";
+            try
+            {
+                if (Regex.IsMatch(firstname, validateFirstName))
+                    Console.WriteLine("First Name saved succesfull");
+                else
+                    Console.WriteLine("Invalid name!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void CheckLastName(string lastname)
+        {
+            string validateFirstName = "^[A-Z][a-z]{3,}$";
+            try
+            {
+                if (Regex.IsMatch(lastname, validateFirstName))
+                    Console.WriteLine("First Name saved succesfull");
+                else
+                    Console.WriteLine("Invalid name!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

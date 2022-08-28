@@ -6,13 +6,16 @@ namespace RegexPatternMatching
     {
         public static void Main(string[] args)
         {
-            Patterns patterns = new Patterns();
-            if (patterns.validateString("Kalpana Gonal"))
-            {
-                Console.WriteLine("Valid");
-            }
-            else
-                Console.WriteLine("Invalid");
+            Patterns regex = new Patterns();
+            Console.WriteLine("User registration Problem statement");
+            Console.WriteLine("*First letter should be capital.");
+            Console.WriteLine("*length should be Minimum three characters.");
+            Console.WriteLine("Enter First name :");
+            string fname = Console.ReadLine();          
+            regex.CheckFirstName(fname);
+            Console.WriteLine("Enter Last name :");
+            string lname = Console.ReadLine();
+            regex.CheckLastName(lname);
         }
     }
 }
