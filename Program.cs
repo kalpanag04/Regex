@@ -6,13 +6,12 @@ namespace RegexPatternMatching
     {
         public static void Main(string[] args)
         {
-            Patterns patterns = new Patterns();
-            if (patterns.validateString("dffh76Ah"))
-            {
-                Console.WriteLine("Valid");
-            }
-            else
-                Console.WriteLine("Invalid");
+            RegexValidation regex=new RegexValidation();
+            Console.WriteLine("First Name  should be capital ");
+            Console.WriteLine("Name should have minimum three characters ");
+            Console.WriteLine("Enter name : ");
+            string firstName = Console.ReadLine();
+            regex.checkFirstName(firstName);
         }
     }
 }
