@@ -27,11 +27,11 @@ namespace RegexPatternMatching
 
         public void CheckLastName(string lastname)
         {
-            string validateFirstName = "^[A-Z][a-z]{3,}$";
+            string validateLastName = "^[A-Z][a-z]{3,}$";
             try
             {
-                if (Regex.IsMatch(lastname, validateFirstName))
-                    Console.WriteLine("First Name saved succesfull");
+                if (Regex.IsMatch(lastname, validateLastName))
+                    Console.WriteLine("Last Name saved succesfull");
                 else
                     Console.WriteLine("Invalid name!!");
             }
@@ -43,7 +43,7 @@ namespace RegexPatternMatching
 
         public void CheckEmail(string email)
         {
-            string validateEmail = "^[a-zA-Z0-9]+([#$%^&*.+][a-zA-Z0-9]+)*[@][a-zA-Z0-9]{2,}[.][a-zA-Z]{2,3}([.][a-zA-Z0-9]{2})?$";
+            string validateEmail = "^[a-zA-Z0-9]+([#$%^&*.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]{2,}[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
             try
             {
                 if (Regex.IsMatch(email, validateEmail))
@@ -76,6 +76,7 @@ namespace RegexPatternMatching
         public void CheckPassword(string password)
         {
             //string validatepassword = "^(?=.*[A-Z])(?=.*[a-zA-Z0-9]{8,}).*$"; 
+            //string validatepassword = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-zA-Z0-9]{8,}).*$";
             string validatepassword = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[&%$#@^*!~])(?=.*[a-zA-Z0-9]{8,}).*$";
             try
             {
@@ -89,8 +90,22 @@ namespace RegexPatternMatching
                 Console.WriteLine(e.Message);
             }
         }
+
+        public void CheckAllEmail(string allEmail)
+        {
+            string validateEmail = "^[a-zA-Z0-9]+([#$%^&*.+][a-zA-Z0-9]+)*[@][a-zA-Z0-9]{1,}[.][a-zA-Z]{2,3}([.][a-zA-Z0-9]{2})?$";
+            try
+            {
+                if (Regex.IsMatch(allEmail, validateEmail))
+                    Console.WriteLine(" All emails validate succesfull");
+                else
+                    Console.WriteLine("Invalid email!!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 
 }
-
-
