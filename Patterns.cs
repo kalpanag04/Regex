@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RegexPatternMatching
 {
-    class RegexValidation
+    class Patterns
     {
         public void checkFirstName(string firstName)
         {
