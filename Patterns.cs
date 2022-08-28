@@ -11,7 +11,7 @@ namespace RegexPatternMatching
     {
         public void CheckFirstName(string firstname)
         {
-            string validateFirstName = "^[A-Z][a-z]{3,20}$";
+            string validateFirstName = "^[A-Z][a-z]{3,}$";
             try
             {
                 if (Regex.IsMatch(firstname, validateFirstName))
